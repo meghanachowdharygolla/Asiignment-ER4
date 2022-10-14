@@ -1,0 +1,48 @@
+.navigation_bar{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navigation_bar li {
+display: inline-block;
+}
+body{
+    background-color: rgb(157, 169, 169);
+}
+.flex-container > div {
+    background-color: #989b9d;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}  
+h1 {
+    font-size: 40px;
+    color:aliceblue;
+}
+img {
+    height: 150px;
+    width: 30;
+    border-radius: 100px;
+}
+#first_name{
+    font-weight: bold;
+
+}
+#Last_name{
+    font-weight: bold;
+
+}
+#Email_ID{
+    font-weight: bold;
+
+}
+#New_Password{
+    font-weight: bold;
+
+}
+#Confirm_password
+{
+    font-weight: bold;
+
+}
