@@ -1,65 +1,63 @@
-const register_form = document.getElementById("reg_form");
-if(register_form) register_form.addEventListener("submit", UserObject);
+const values = document.getElementById("reg_form");
+if(values) values.addEventListener("submit", Identifier);
 
-function UserObject(e){
+function Identifier(e){
     e.preventDefault();
-    let firstname = ((document.getElementById("firstname")||{}).value)||"";
-    let lastname = ((document.getElementById("lastname")||{}).value)||"";
-    let Email = ((document.getElementById("Email")||{}).value)||"";
+    let frst_name = ((document.getElementById("first_name")||{}).value)||"";
+    let lst_name = ((document.getElementById("Last_name")||{}).value)||"";
+    let Email_id = ((document.getElementById("Email_ID")||{}).value)||"";
     let password = ((document.getElementById("New_Password")||{}).value)||"";
-    let note = ((document.getElementById("Note")||{}).value)||"";
-    const newUser = new User(firstname,lastname,Email,password,note);
-    console.log(newUser); 
-    console.log(`Email = ${Email}`) 
-    console.log(`note = ${note}`) 
+    let note = ((document.getElementById("inputtext")||{}).value)||"";
+    const newEnduser = new Enduser(frst_name,lst_name,Email_id,password,note);
+    console.log(newEnduser);   
 }
 
 
-function User(firstname,lastname,Email,password,note){
-    this.firstname = firstname;
-    this.lastname = lastname; //document.getElementById("lastname").value;
-    this.Email = Email; //document.getElementById("username").value;
+function Enduser(firstname,lastname,Email_id,password,note){
+    this.frst_name = firstname;
+    this.lst_name = lastname; //document.getElementById("lastname").value;
+    this.Email_id = Email_id; //document.getElementById("username").value;
     this.password = password; //document.getElementById("password").value;
     this.note = note;
 }
 
-User.prototype.getFirstName = function(){
-    return this.firstname;
+Enduser.prototype.getFirstName = function(){
+    return this.frst_name;
 }
 
-User.prototype.getLastName = function(){
-    return this.lastname;
+Enduser.prototype.getLastName = function(){
+    return this.lst_name;
 }
 
-User.prototype.getemail = function(){
-    return this.Email;
+Enduser.prototype.getusername = function(){
+    return this.Email_id;
 }
 
-User.prototype.getpassword = function(){
+Enduser.prototype.getpassword = function(){
    return this.password;
 }
 
-User.prototype.getnote = function(){
+Enduser.prototype.getnote = function(){
     return this.note;
 }
 
 
-User.prototype.setFirstName = function(firstname){
-    this.firstname = firstname;
+Enduser.prototype.setFirstName = function(firstname){
+    this.frst_name = firstname;
 }
 
-User.prototype.setLastName = function(lastname){
-    this.lastname = lastname;
+Enduser.prototype.setLastName = function(lastname){
+    this.lst_name = lastname;
 }
 
-User.prototype.setemail = function(Email){
-    this.Email = Email;
+Enduser.prototype.setusername = function(username){
+    this.Email_id = username;
 }
 
-User.prototype.setpassword = function(password){
+Enduser.prototype.setpassword = function(password){
    this.password = password;
 }
 
-User.prototype.setnote = function(note){
+Enduser.prototype.setnote = function(note){
     this.note = note;
 }
