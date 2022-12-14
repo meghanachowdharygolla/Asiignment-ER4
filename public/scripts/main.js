@@ -5,7 +5,7 @@ function getUsers() {
   .then((res)=> res.json())
   .then((data) => console.log(data))
   .catch((err)=> console.log(err))
-}+
+}
 
 
 
@@ -104,9 +104,9 @@ if(loginForm) loginForm.addEventListener('submit', login);
 function login(e) {
   e.preventDefault();
 
-  let userName = document.getElementById("username").value;
-  let password = document.getElementById("pswd").value;
-  let users1 = new User(userName, password);
+  let Email_ID = document.getElementById("Email_ID").value;
+  let password = document.getElementById("password").value;
+  let users1 = new User(Email_ID, password);
 
   fetchData("/users/login", users1, "POST")
   .then((data) => {
