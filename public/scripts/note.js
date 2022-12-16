@@ -9,14 +9,14 @@ class User {
 }
 
 // login functionality
-let noteForm = document.getElementById("note_form");
+let noteForm = document.getElementById("matches");
 if(noteForm) noteForm.addEventListener('submit', saveNote);
 
 function saveNote(e) {
   e.preventDefault();
 
-  let userID = document.getElementById("userID").value;
-  let noteContent = document.getElementById("note").value;
+  let Email_ID = document.getElementById("Email_ID").value;
+  let noteContent = document.getElementById("inputtext").value;
   let note = new User(userID, noteContent);
 
   fetchData("/notes/insert", note, "POST")

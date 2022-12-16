@@ -1,7 +1,7 @@
 import { getCurrentUser, fetchData, removeCurrentUser, setCurrentUser} from "./main.js";
 
 let user = getCurrentUser(); 
-if(!user) window.location.href = "login.html";
+if(!user) window.location.href = "Assignment2_2.html";
 
 console.log(user);
 
