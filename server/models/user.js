@@ -24,8 +24,8 @@ async function getAllUsers() {
 // Create  User - Registering
 async function register(user) {
   let cUser = await getUser(user);
- if(cUser.length > 0) throw Error("Username already in use");
-
+  if(cUser.length > 0) throw Error("Username already in use");
+  console.log("ln", user)
   const sql = `INSERT INTO users (first_name, last_name, Email_id, password)
     VALUES ("${user.first_name}","${user.last_name}","${user.Email_id}", "${user.password}");
   `

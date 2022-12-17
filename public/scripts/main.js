@@ -1,5 +1,6 @@
 let nav = document.querySelector('nav');
 
+/*
 if(getCurrentUser()) {
   nav.innerHTML = `
     <ul>
@@ -17,6 +18,7 @@ if(getCurrentUser()) {
     </ul>
   `
 }
+*/
 
 // Fetch method implementation:
 export async function fetchData(route = '', data = {}, methodType) {

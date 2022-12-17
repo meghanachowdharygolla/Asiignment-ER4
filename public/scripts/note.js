@@ -15,7 +15,8 @@ if(noteForm) noteForm.addEventListener('submit', saveNote);
 function saveNote(e) {
   e.preventDefault();
 
-  let Email_ID = document.getElementById("Email_ID").value;
+  let userID = 1
+  //document.getElementById("Email_ID").value;
   let noteContent = document.getElementById("inputtext").value;
   let note = new User(userID, noteContent);
 
