@@ -1,10 +1,10 @@
-import { fetchData, setCurrentUser } from './main.js'
+import { fetchData, getCurrentUser } from './main.js'
 
 // user class
 class User {
-  constructor(userID, noteContent) {
-    this.userID = userID;
+  constructor(noteContent, userID) {
     this.noteContent = noteContent;
+    this.userID = userID; 
   }
 }
 
@@ -12,18 +12,19 @@ class User {
 let noteForm = document.getElementById("matches");
 if(noteForm) noteForm.addEventListener('submit', saveNote);
 
+let user = getCurrentUser();
+
+
 function saveNote(e) {
   e.preventDefault();
 
-  let userID = 1
-  //document.getElementById("Email_ID").value;
+  let userID = user.userID;
   let noteContent = document.getElementById("inputtext").value;
-  let note = new User(userID, noteContent);
+  let note = new User(noteContent, userID);
 
-  fetchData("/notes/insert", note, "POST")
-  .then((data) => {
-    setCurrentUser(data);
-    window.location.replace = "login.html"
+  fetchData("/notes/notecreate", note, "POST")
+  .then((note) => {
+    window.location.replace = "Assignment2_3.html"
   })
   .catch((err) => {
     let p = document.querySelector('.error');

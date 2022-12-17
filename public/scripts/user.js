@@ -23,12 +23,12 @@ function login(e) {
 
   let Email_id = document.getElementById("Email_ID").value;
   let password = document.getElementById("password").value;
-  let user = new User(Email_id, password);
+  let user = new User("","",Email_id, password);
 
   fetchData("/users/login", user, "POST")
   .then((data) => {
     setCurrentUser(data);
-    window.location.href = "Assignment2_1.html";
+    window.location.href = "Assignment2_3.html";
   })
   .catch((err) => {
     let p = document.querySelector('.error');
